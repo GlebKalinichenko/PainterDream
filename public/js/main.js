@@ -10,7 +10,7 @@
     ctx.lineJoin = 'round';
 
     // populate the toolbars
-    for (var i=1; i<10; i++) {
+    for (var i=1; i <17 ; i++) {
         var lineSize = Math.round(i*2);
         var el = document.createElement('button');
         el.innerHTML = lineSize;
@@ -22,7 +22,7 @@
     }
 
     var colors = [];
-    for (var i=0; i<10; i++) {
+    for (var i=0; i < 17; i++) {
         colors.push('hsl('+(36*i-6)+', 93%, 47%)');
     }
     colors.push('#eee', '#222');
