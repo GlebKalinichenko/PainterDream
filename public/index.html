@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sketchpad</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <aside class="toolbar" id="size-toolbar">
+        </aside>
+        <div id="main">
+            <canvas id="scratchpad" width="800" height="500"></canvas>
+        </div>
+        <aside class="toolbar" id="color-toolbar">
+        </aside>
+
+        <footer id="footer">
+            Users connected: <span id="counter">?</span>
+        </footer>
+    </div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
