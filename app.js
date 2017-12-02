@@ -21,6 +21,10 @@ io.on('connection', function(socket) {
         socket.broadcast.emit('line', data);
     });
 
+    socket.on('clear', function () {
+        socket.broadcast.emit('clear');
+    });
+
     socket.on('disconnect', function(data) {
         io.emit('num_clients', --num_clients);
     });

@@ -43,6 +43,13 @@
         };
     }
 
+    /**
+    * Init line
+    * @param {Int}    Index of start
+    * @param {Int}    Index of end
+    * @param {Int}    Line size
+    * @param {Int}    Color 
+    */
     function line(start, end, size, color) {
         var oldSize = ctx.lineWidth;
         var oldColor = ctx.fillStyle;
@@ -79,6 +86,15 @@
 
     function handleEnd(e) {
         oldPos = {};
+    }
+
+    $('#clearBtn').on('click', function(){
+        clearCanvas();
+        socket.emit('clear');
+    })
+
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
     /**
@@ -144,5 +160,9 @@
     socket.on('num_clients', function(data) {
         counter.innerHTML = data;
     });
+
+    socket.on('clear', function(){
+        clearCanvas();
+    })
 
 })(document.getElementById('scratchpad'), io(), document.getElementById('size-toolbar'), document.getElementById('color-toolbar'), document.getElementById('counter'));
